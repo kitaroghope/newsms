@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Learning Platform</title>
+
+  <!-- Carbon Design CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+  <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js" defer></script>
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+    }
+    .landing-container {
+      padding: 3rem;
+      text-align: center;
+      background: white;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 5rem;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #6f6f6f;
+      margin: 1rem 0 2rem 0;
+    }
+    .btn-container {
+      margin-top: 2rem;
+    }
+    .hero-img {
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+    .auth-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: auto;
+      padding-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="bx--header" role="banner" aria-label="E-learning Platform">
+    <a class="bx--header__name" href="#">
+      <span class="bx--header__name--prefix">E</span>LearnX
+    </a>
+    <nav class="bx--header__nav" aria-label="Page navigation">
+      <ul class="bx--header__menu-bar">
+        <li><a class="bx--header__menu-item" href="#">Courses</a></li>
+        <li><a class="bx--header__menu-item" href="#">About</a></li>
+        <li><a class="bx--header__menu-item" href="#">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Added Authentication Buttons -->
+    <div class="auth-buttons">
+      <button class="bx--btn bx--btn--secondary" style="min-width: 100px;">Login</button>
+      <button class="bx--btn bx--btn--primary" style="min-width: 100px;">Sign Up</button>
+    </div>
+  </header>
+
+  <main class="landing-container">
+    <h1 class="hero-title">Unlock Learning, Anytime, Anywhere</h1>
+    <p class="hero-subtitle">Join thousands of learners on our smart e-learning platform. Interactive lessons, expert instructors, and real results.</p>
+
+    <div class="btn-container">
+      <button class="bx--btn bx--btn--primary">Get Started</button>
+      <button class="bx--btn bx--btn--tertiary">Browse Courses</button>
+    </div>
+
+    <img src="https://images.vexels.com/media/users/3/224233/isolated/preview/d5ee0e9c87bb54cf867d7fb89c4570b8-online-education-logo.png" alt="Online Learning Illustration" class="hero-img" />
+  </main>
+
+  <footer class="bx--footer" style="margin-top: 5rem;">
+    <div class="bx--footer__bottom">
+      <p>&copy; 2025 ELearnX. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
