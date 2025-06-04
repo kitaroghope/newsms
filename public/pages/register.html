@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Learning Platform</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
+  <!-- Tailwind CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="E-Learning Platform" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://newsms.onrender.com/logo.png" />
+  <meta property="og:url" content="https://newsms.onrender.com/" />
+  <meta property="og:description" content="A platform for learning using interactive lessons, expert instructors, and real results." />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="E-Learning Platform" />
+  <meta name="twitter:description" content="Join thousands of learners and unlock your potential with interactive online courses." />
+  <meta name="twitter:image" content="https://newsms.onrender.com/logo.png" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Smart e-learning platform with expert tutors, hands-on lessons, and real results." />
+  <meta name="keywords" content="e-learning, online courses, education, elearnx, study online" />
+  <meta name="author" content="ELearnX Team" />
+
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
+    
+    <div id="message" class="mb-4 text-sm text-center"></div>
+
+    <form id="registerForm" class="space-y-4">
+      <input type="text" id="name" placeholder="Name" required class="w-full p-2 border rounded" />
+      <input type="email" id="email" placeholder="Email" required class="w-full p-2 border rounded" />
+      <input type="password" id="password" placeholder="Password" required class="w-full p-2 border rounded" />
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full">
+        Register
+      </button>
+    </form>
+  </div>
+  <script src="../js/register.js"></script>
+
+</body>
+</html>

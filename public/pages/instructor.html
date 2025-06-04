@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructor Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="../js/instructor.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-5xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4">Welcome, <span id="instructorName">Instructor</span></h1>
+
+    <h2 class="text-xl font-semibold mb-4">My Courses</h2>
+    <ul id="courseList" class="space-y-3 mb-8"></ul>
+
+    <hr class="my-6" />
+    <h2 class="text-xl font-semibold mb-4">Create New Course</h2>
+
+    <form id="courseForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="text" id="title" placeholder="Title" required class="p-2 border rounded" />
+      <input type="text" id="category" placeholder="Category" class="p-2 border rounded" />
+      <input type="text" id="level" placeholder="Level (Beginner, Intermediate)" class="p-2 border rounded" />
+      <input type="text" id="duration" placeholder="Duration (e.g. 4 weeks)" class="p-2 border rounded" />
+      <textarea id="description" placeholder="Course Description" class="p-2 border rounded col-span-full" rows="3"></textarea>
+      <button type="submit" class="col-span-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Create Course</button>
+    </form>
+  </div>
+
+</body>
+</html>

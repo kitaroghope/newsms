@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enrollment Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="../js/enroll.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6">Manage Enrollments</h1>
+
+    <!-- Enrollment Form -->
+    <form id="enrollForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <select id="userSelect" class="p-2 border rounded" required></select>
+      <select id="courseSelect" class="p-2 border rounded" required></select>
+      <button type="submit" class="col-span-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Enroll User</button>
+    </form>
+    <!-- Filter Options -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <select id="filterUser" class="p-2 border rounded">
+        <option value="">Filter by User</option>
+    </select>
+    <select id="filterCourse" class="p-2 border rounded">
+        <option value="">Filter by Course</option>
+    </select>
+    </div>
+
+
+    <!-- Enrollments List -->
+    <h2 class="text-xl font-semibold mb-3">All Enrollments</h2>
+    <ul id="enrollmentsList" class="space-y-3"></ul>
+  </div>
+
+</body>
+</html>

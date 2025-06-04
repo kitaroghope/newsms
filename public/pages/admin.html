@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="admin-dashboard.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div id="notification" class="fixed top-4 right-4 bg-green-100 text-green-800 px-4 py-2 rounded shadow hidden"></div>
+
+  <div class="max-w-6xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-blue-100 p-4 rounded shadow text-center">
+        <p class="text-gray-600 text-sm">Total Users</p>
+        <p id="userCount" class="text-2xl font-bold">0</p>
+      </div>
+      <div class="bg-green-100 p-4 rounded shadow text-center">
+        <p class="text-gray-600 text-sm">Total Courses</p>
+        <p id="courseCount" class="text-2xl font-bold">0</p>
+      </div>
+      <div class="bg-yellow-100 p-4 rounded shadow text-center">
+        <p class="text-gray-600 text-sm">Total Enrollments</p>
+        <p id="enrollmentCount" class="text-2xl font-bold">0</p>
+      </div>
+    </div>
+
+    <!-- User List -->
+    <h2 class="text-xl font-semibold mb-3">All Users</h2>
+    <ul id="userList" class="mb-6 space-y-2"></ul>
+
+    <!-- Course List -->
+    <h2 class="text-xl font-semibold mb-3">All Courses</h2>
+    <ul id="courseList" class="space-y-2"></ul>
+  </div>
+
+  <!-- User Modal -->
+  <div id="userModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded shadow w-full max-w-md">
+      <h2 class="text-xl font-bold mb-4">Edit User</h2>
+      <input id="userEmail" type="email" disabled class="w-full mb-2 p-2 border rounded" />
+      <select id="userRole" class="w-full mb-4 p-2 border rounded">
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div class="flex justify-end space-x-2">
+        <button onclick="closeUserModal()" class="bg-gray-300 px-4 py-2 rounded">Cancel</button>
+        <button onclick="saveUser()" class="bg-blue-600 text-white px-4 py-2 rounded">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Modal -->
+  <div id="courseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded shadow w-full max-w-md">
+      <h2 class="text-xl font-bold mb-4">Edit Course</h2>
+      <input id="courseId" type="hidden" />
+      <input id="courseTitle" class="w-full mb-2 p-2 border rounded" placeholder="Title" />
+      <input id="courseCategory" class="w-full mb-2 p-2 border rounded" placeholder="Category" />
+      <input id="courseInstructor" class="w-full mb-4 p-2 border rounded" placeholder="Instructor" />
+      <div class="flex justify-end space-x-2">
+        <button onclick="closeCourseModal()" class="bg-gray-300 px-4 py-2 rounded">Cancel</button>
+        <button onclick="saveCourse()" class="bg-green-600 text-white px-4 py-2 rounded">Save</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

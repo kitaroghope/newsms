@@ -1,34 +1,45 @@
 // models/userModel.js
 
-const db = require('../utils/mongoDBApi');
+const mongoose = require('mongoose');
 
-const DB_NAME = 'elearning_db'; // replace with your actual DB name
-const COLLECTION = 'users';
+// Define the schema
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }, // Should be hashed in practice
+  role: { type: String, default: 'user' }
+});
 
+// Create the model
+const User = mongoose.model('User', userSchema);
+
+// Equivalent functions using Mongoose
 async function createUser(userData) {
-    return await db.createListing(userData, DB_NAME, COLLECTION);
+  const user = new User(userData);
+  return await user.save();
 }
 
 async function findUserByEmail(email) {
-    return await db.readRow({ email }, DB_NAME, COLLECTION);
+  return await User.findOne({ email });
 }
 
 async function updateUser(email, updates) {
-    return await db.updateRow({ email }, updates, DB_NAME, COLLECTION);
+  return await User.findOneAndUpdate({ email }, updates, { new: true });
 }
 
 async function deleteUser(email) {
-    return await db.deleteRow({ email }, DB_NAME, COLLECTION);
+  return await User.findOneAndDelete({ email });
 }
 
 async function listUsers(filter = {}) {
-    return await db.readRows(filter, DB_NAME, COLLECTION);
+  return await User.find(filter);
 }
 
 module.exports = {
-    createUser,
-    findUserByEmail,
-    updateUser,
-    deleteUser,
-    listUsers
+  createUser,
+  findUserByEmail,
+  updateUser,
+  deleteUser,
+  listUsers,
+  User // exporting model in case you need it elsewhere
 };
